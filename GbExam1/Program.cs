@@ -5,7 +5,10 @@ using System.Text;
 public class ExamAnswer
 {
 
-    // Преобразует строку с числом в массив цифр
+    /// <summary>
+    /// Очищает элементы массива от лишних (обрамляющих) пробелов
+    /// </summary>
+    /// <param name="array">Ссылка на массив</param>
     static void TrimStringsArray(ref String[] array)
     {
         for (int i = 0; i < array.Length; i++)
@@ -13,7 +16,10 @@ public class ExamAnswer
             array[i] = array[i].Trim();
         }
     }
-
+    /// <summary>
+    /// Обрамляет элементы массива двойными кавычками
+    /// </summary>
+    /// <param name="array">Ссылка на массив</param>
     static void AddDoubleQuotesToItems(ref String[] array)
     {
         for (int i = 0; i < array.Length; i++)
@@ -28,6 +34,8 @@ public class ExamAnswer
     /// <param name="array">исходный массив</param>
     /// <param name="max_lenght">лимит</param>
     /// <returns>Массив без слов, которые длиннее лимита</returns>
+    /// <deprecated>Не подходит для данной реализации</deprecated>
+    [Obsolete("Не подходит для данной реализации")]
     static String[] FilterWordsArray(String[] array, int max_lenght = 3)
     {
         return array.Where(x => x.Length <= max_lenght).ToArray();
@@ -90,7 +98,7 @@ public class ExamAnswer
         // подгоняем размер результирующего массива
         Array.Resize(ref result_array, words_array.Length);
 
-        // очищаем массив слов от пробелов
+        // очищаем массив слов от лишних пробелов
         TrimStringsArray(ref words_array);
 
         // фильтруем слова по длинне
