@@ -81,7 +81,7 @@ public class ExamAnswer
         else
         {
             Console.Clear();
-            Console.WriteLine("Программа, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна {0} {1}", word_lenght_limit, Pluralize(word_lenght_limit, ["символу", "символам", "символам"]));
+            Console.WriteLine("Программа, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна {0} {1}.", word_lenght_limit, Pluralize(word_lenght_limit, ["символу", "символам", "символам"]));
             Console.Write("Введите слова через запятую и нажмите Enter: ");
             input_string = Console.ReadLine();
             if (input_string != null && input_string != "")
